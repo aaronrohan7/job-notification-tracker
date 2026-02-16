@@ -5,6 +5,7 @@
     <title>KodNest Premium Build System – Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./router.js"></script>
   </head>
   <body>
     <div class="kn-page">
@@ -13,223 +14,59 @@
         <div class="kn-topbar__left">
           <span class="kn-topbar__project">KodNest Premium Build System</span>
         </div>
-        <div class="kn-topbar__center">
-          <span class="kn-topbar__progress">Step 1 / 4</span>
-        </div>
-        <div class="kn-topbar__right">
-          <span class="kn-badge kn-badge--status kn-badge--status-not-started">
-            Not Started
-          </span>
-        </div>
+        <button
+          class="kn-topbar__menu-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="kn-topbar__menu-icon"></span>
+        </button>
+        <nav class="kn-topbar__nav" aria-label="Primary">
+          <a href="#/" data-route="/" class="kn-nav-link kn-nav-link--active">
+            Dashboard
+          </a>
+          <a href="#/saved" data-route="/saved" class="kn-nav-link">
+            Saved
+          </a>
+          <a href="#/digest" data-route="/digest" class="kn-nav-link">
+            Digest
+          </a>
+          <a href="#/settings" data-route="/settings" class="kn-nav-link">
+            Settings
+          </a>
+          <a href="#/proof" data-route="/proof" class="kn-nav-link">
+            Proof
+          </a>
+        </nav>
       </header>
 
       <!-- Context Header -->
-      <section class="kn-context">
-        <h1 class="kn-context__headline">
-          Establish the build surface for this workflow.
+      <section class="kn-context" id="route-context">
+        <h1 class="kn-context__headline" id="route-title">
+          Dashboard
         </h1>
-        <p class="kn-context__subtext">
-          Define a calm, repeatable space where interfaces are assembled,
-          validated, and proven before they move to production.
+        <p class="kn-context__subtext" id="route-subtext">
+          This section will be built in the next step.
         </p>
       </section>
 
-      <!-- Main Layout -->
+      <!-- Main Layout (Placeholder workspace) -->
       <main class="kn-main">
-        <!-- Primary Workspace (70%) -->
         <section class="kn-primary">
           <article class="kn-card">
             <header class="kn-card__header">
-              <h2 class="kn-card__title">Workspace layout</h2>
-              <p class="kn-card__subtitle">
-                The primary surface for composing and reviewing production UI,
-                with predictable structure and no visual noise.
+              <h2 class="kn-card__title" id="route-secondary-title">
+                Dashboard
+              </h2>
+              <p class="kn-card__subtitle" id="route-secondary-subtext">
+                This section will be built in the next step.
               </p>
             </header>
-            <div class="kn-card__body">
-              <div class="kn-form-group">
-                <label class="kn-label" for="workspace-name"
-                  >Workspace name</label
-                >
-                <input
-                  id="workspace-name"
-                  class="kn-input"
-                  type="text"
-                  placeholder="Example: Customer onboarding flow"
-                />
-              </div>
-
-              <div class="kn-form-group">
-                <label class="kn-label" for="workspace-goal"
-                  >Primary outcome</label
-                >
-                <textarea
-                  id="workspace-goal"
-                  class="kn-input kn-input--textarea"
-                  rows="4"
-                  placeholder="Describe the decision this surface should enable."
-                ></textarea>
-              </div>
-
-              <div class="kn-card__actions">
-                <button class="kn-button kn-button--primary" type="button">
-                  Save layout intent
-                </button>
-                <button class="kn-button kn-button--secondary" type="button">
-                  Cancel
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="kn-card">
-            <header class="kn-card__header">
-              <h2 class="kn-card__title">Interaction tokens</h2>
-              <p class="kn-card__subtitle">
-                Button, input, and card behaviors are governed by a single
-                interaction language.
-              </p>
-            </header>
-            <div class="kn-card__body kn-card__body--tokens">
-              <div class="kn-token">
-                <div class="kn-token__label">Primary action</div>
-                <button class="kn-button kn-button--primary" type="button">
-                  Primary button
-                </button>
-              </div>
-
-              <div class="kn-token">
-                <div class="kn-token__label">Secondary action</div>
-                <button class="kn-button kn-button--secondary" type="button">
-                  Secondary button
-                </button>
-              </div>
-
-              <div class="kn-token">
-                <div class="kn-token__label">Input focus</div>
-                <input
-                  class="kn-input kn-input--demo-focus"
-                  type="text"
-                  value="Focused state"
-                  readonly
-                />
-              </div>
-            </div>
           </article>
         </section>
-
-        <!-- Secondary Panel (30%) -->
-        <aside class="kn-secondary">
-          <section class="kn-panel">
-            <header class="kn-panel__header">
-              <h2 class="kn-panel__title">Step guidance</h2>
-              <p class="kn-panel__subtitle">
-                Use this panel to keep the work grounded: why the step exists,
-                what the system expects from it, and how proof will be captured.
-              </p>
-            </header>
-
-            <section class="kn-panel__section">
-              <h3 class="kn-panel__section-title">Copyable prompt</h3>
-              <div class="kn-prompt">
-                <pre class="kn-prompt__body">
-Define a single, calm surface where this build step is executed.
-Constrain the layout to:
-- Top bar with status
-- Context header with one-line purpose
-- Primary workspace for the actual interaction
-- Secondary panel for guidance and proof
-                </pre>
-              </div>
-              <div class="kn-panel__actions">
-                <button class="kn-button kn-button--primary" type="button">
-                  Copy
-                </button>
-                <button class="kn-button kn-button--secondary" type="button">
-                  Build in Lovable
-                </button>
-              </div>
-            </section>
-
-            <section class="kn-panel__section">
-              <h3 class="kn-panel__section-title">Outcome</h3>
-              <p class="kn-panel__text">
-                Mark the result of this step factually. If something fails, the
-                system explains what happened and how to recover.
-              </p>
-              <div class="kn-panel__actions">
-                <button class="kn-button kn-button--secondary" type="button">
-                  It Worked
-                </button>
-                <button class="kn-button kn-button--secondary" type="button">
-                  Error
-                </button>
-                <button class="kn-button kn-button--secondary" type="button">
-                  Add Screenshot
-                </button>
-              </div>
-            </section>
-          </section>
-        </aside>
+        <aside class="kn-secondary"></aside>
       </main>
-
-      <!-- Proof Footer -->
-      <footer class="kn-footer">
-        <div class="kn-footer__content">
-          <div class="kn-proof-item">
-            <label class="kn-checkbox">
-              <input type="checkbox" />
-              <span class="kn-checkbox__box"></span>
-              <span class="kn-checkbox__label">UI Built</span>
-            </label>
-            <input
-              class="kn-input kn-input--proof"
-              type="text"
-              placeholder="Describe or link to visible UI proof."
-            />
-          </div>
-
-          <div class="kn-proof-item">
-            <label class="kn-checkbox">
-              <input type="checkbox" />
-              <span class="kn-checkbox__box"></span>
-              <span class="kn-checkbox__label">Logic Working</span>
-            </label>
-            <input
-              class="kn-input kn-input--proof"
-              type="text"
-              placeholder="How did you confirm the logic behaves correctly?"
-            />
-          </div>
-
-          <div class="kn-proof-item">
-            <label class="kn-checkbox">
-              <input type="checkbox" />
-              <span class="kn-checkbox__box"></span>
-              <span class="kn-checkbox__label">Test Passed</span>
-            </label>
-            <input
-              class="kn-input kn-input--proof"
-              type="text"
-              placeholder="Record the test, command, or scenario used."
-            />
-          </div>
-
-          <div class="kn-proof-item">
-            <label class="kn-checkbox">
-              <input type="checkbox" />
-              <span class="kn-checkbox__box"></span>
-              <span class="kn-checkbox__label">Deployed</span>
-            </label>
-            <input
-              class="kn-input kn-input--proof"
-              type="text"
-              placeholder="Capture the environment and deployment reference."
-            />
-          </div>
-        </div>
-      </footer>
     </div>
   </body>
 </html>
-
